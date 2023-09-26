@@ -1,24 +1,19 @@
-import "../App.css";
 
-export default function Content() {
+export default function Content(props) {
   return (
-    <div className="content">
-      <div className="about">
-        <h3>About</h3>
-        <p>
-          I am a frontend developer who is more interested in the javascript
-          aspect of coding. I like writing codes that make a site run in a
-          certain way using mathematics and logic.
-        </p>
+    <section>
+    <div className="location">
+      <div>
+        <img src={props.imageUrl} className="location--img"/>
       </div>
-      <div className="interest">
-        <h3>Interest</h3>
-        <p>
-          Playing games with Joker. Fighting crime while wearing pant on my
-          trousers. Eating frogs. Black cloth. Travis Scott. Jermaine Cole.
-          Burna Boy. etc.{" "}
-        </p>
+      <div className="info">
+        <h4>{props.icon} {props.location} <span className="location--map"><a href={props.googleMapsUrl} target="_blank">View on Google Maps</a></span> </h4>
+        <h2>{props.title}</h2>
+        <h5>{props.startDate} - {props.endDate}</h5>
+        <p>{props.description}</p>
       </div>
     </div>
+    <hr></hr>
+    </section>
   );
 }

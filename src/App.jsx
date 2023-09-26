@@ -1,16 +1,22 @@
 import "./App.css";
-import Info from "./components/Info";
 import Header from "./components/Header";
 import Content from "./components/Content";
-import Footer from "./components/Footer";
+import data from "./data";
 
 function App() {
+  const journals = data.map((item) => {
+    return( <Content
+      key = {item.id}
+      {...item}
+    />
+    )
+  });
   return (
     <div className="app">
       <Header />
-      <Info />
-      <Content />
-      <Footer />
+      <section className="journal">
+        {journals}
+      </section>
     </div>
   );
 }
